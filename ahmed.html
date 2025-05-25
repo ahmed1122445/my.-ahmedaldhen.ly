@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقترح الهيكل التنظيمي للمجموعة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f9fafb; /* Tailwind gray-50 */
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            border-color: #0d9488; /* Tailwind teal-600 */
+            color: #0d9488; /* Tailwind teal-600 */
+            background-color: #ccfbf1; /* Tailwind teal-100 */
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .org-chart-node {
+            border: 2px solid #0d9488; /* Tailwind teal-600 */
+            background-color: #f0fdfa; /* Tailwind teal-50 */
+            color: #134e4a; /* Tailwind teal-900 */
+            padding: 0.75rem; /* p-3 */
+            border-radius: 0.5rem; /* rounded-lg */
+            text-align: center;
+            margin: 0.5rem; /* m-2 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        }
+        .org-chart-connector {
+            width: 2px;
+            background-color: #0d9488; /* Tailwind teal-600 */
+            margin: 0 auto;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 1.5rem; /* p-6 */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .card-title {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            color: #0f766e; /* Tailwind teal-700 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .list-item::before {
+            content: "✓";
+            color: #0d9488; /* Tailwind teal-600 */
+            margin-left: 0.5rem; /* ml-2 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-stone-800">
+
+    <header class="bg-teal-700 text-white py-6 shadow-md">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl font-bold">مقترح الهيكل التنظيمي للمجموعة</h1>
+            <p class="text-lg mt-2">نموذج الخدمات المشتركة لتعزيز الكفاءة والنمو</p>
+        </div>
+    </header>
+
+    <nav class="container mx-auto px-4 mt-8 mb-6">
+        <div class="flex flex-wrap justify-center space-x-2 space-x-reverse sm:space-x-4">
+            <button data-tab="overview" class="tab-button active text-sm sm:text-base font-medium py-2 px-3 sm:px-4 border-b-2 border-transparent hover:border-teal-500 hover:text-teal-600 rounded-t-lg">نظرة عامة</button>
+            <button data-tab="orgChart" class="tab-button text-sm sm:text-base font-medium py-2 px-3 sm:px-4 border-b-2 border-transparent hover:border-teal-500 hover:text-teal-600 rounded-t-lg">الهيكل التنظيمي</button>
+            <button data-tab="sharedServices" class="tab-button text-sm sm:text-base font-medium py-2 px-3 sm:px-4 border-b-2 border-transparent hover:border-teal-500 hover:text-teal-600 rounded-t-lg">الإدارات المركزية</button>
+            <button data-tab="operatingUnits" class="tab-button text-sm sm:text-base font-medium py-2 px-3 sm:px-4 border-b-2 border-transparent hover:border-teal-500 hover:text-teal-600 rounded-t-lg">وحدات الأعمال</button>
+            <button data-tab="governance" class="tab-button text-sm sm:text-base font-medium py-2 px-3 sm:px-4 border-b-2 border-transparent hover:border-teal-500 hover:text-teal-600 rounded-t-lg">الحوكمة والتنسيق</button>
+            <button data-tab="implementation" class="tab-button text-sm sm:text-base font-medium py-2 px-3 sm:px-4 border-b-2 border-transparent hover:border-teal-500 hover:text-teal-600 rounded-t-lg">الخطوات التالية</button>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="overview" class="content-section active card">
+            <h2 class="card-title">مقدمة: رؤيتنا المتكاملة وأهداف الدليل التنظيمي</h2>
+            <p class="mb-4 text-stone-700 leading-relaxed">مجموعتنا تعمل ضمن مقر واحد، حيث يتشارك جميع الموظفين في تقديم الخدمات لدعم الأهداف العامة. هذا النموذج يهدف إلى تعظيم الكفاءة، تقليل الازدواجية، وتعزيز التعاون. يتطلب هيكلاً واضحاً لضمان الفعالية، الشفافية، والعدالة في جميع العمليات.</p>
+            <h3 class="text-lg font-semibold text-teal-700 mb-2">أهداف الدليل التنظيمي:</h3>
+            <ul class="list-disc list-inside space-y-2 text-stone-700">
+                <li class="list-item">تنظيم العلاقة والمسؤوليات: وضع إطار واضح لتوزيع الصلاحيات وتحديد آليات الاتصال.</li>
+                <li class="list-item">توضيح توزيع المهام: تفصيل دور الإدارات المركزية والمهام التشغيلية لوحدات الأعمال.</li>
+                <li class="list-item">ضمان الشفافية والمساءلة: تحديد المسؤول المباشر وإرساء نظم للتقارير والمراجعة.</li>
+                <li class="list-item">تسهيل التوسع المستقبلي: تصميم هيكل مرن وقابل للنمو يدعم الاستدامة.</li>
+            </ul>
+            <h3 class="text-lg font-semibold text-teal-700 mt-6 mb-2">القيمة المضافة لمجموعتنا:</h3>
+             <ul class="list-disc list-inside space-y-2 text-stone-700">
+                <li class="list-item">كفاءة تشغيلية عالية: الاستفادة القصوى من الموارد والموظفين المشتركين.</li>
+                <li class="list-item">توفير في التكاليف: تقليل الازدواجية في الأدوار والبنية التحتية.</li>
+                <li class="list-item">تخصص وتركيز: كل وحدة أعمال تركز على مجالها الأساسي.</li>
+                <li class="list-item">شفافية ومساءلة: وضوح الأدوار والمسؤوليات يعزز الحوكمة.</li>
+                <li class="list-item">مرونة وقابلية للتوسع: هيكل يدعم النمو المستقبلي وإضافة أعمال جديدة بسهولة.</li>
+                <li class="list-item">خدمة عملاء محسّنة: من خلال التنسيق والدعم المركزي.</li>
+            </ul>
+        </section>
+
+        <section id="orgChart" class="content-section card">
+            <h2 class="card-title">الهيكل التنظيمي المقترح</h2>
+            <p class="mb-6 text-stone-700 leading-relaxed">يوضح هذا القسم الهيكل العام للمجموعة، بدءًا من الإدارة العليا، مرورًا بالإدارات المركزية الداعمة، وانتهاءً بوحدات الأعمال التشغيلية المتخصصة. تم تصميم الهيكل لتعزيز انسيابية العمل ودعم اتخاذ القرارات الفعالة.</p>
+            <div class="org-chart-node mx-auto max-w-sm">الرئيس التنفيذي / المدير العام للمجموعة</div>
+            <div class="flex justify-center mt-2">
+                <div class="org-chart-connector h-8"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                <div class="text-center">
+                    <div class="org-chart-node inline-block min-w-[200px] bg-teal-100 border-teal-700">الإدارات المركزية (الخدمات المشتركة)</div>
+                     <div class="mt-2 space-y-1">
+                        <div class="org-chart-connector h-4"></div>
+                        <div class="org-chart-node text-sm py-1 px-2">الموارد البشرية</div>
+                        <div class="org-chart-node text-sm py-1 px-2">المالية والمحاسبة</div>
+                        <div class="org-chart-node text-sm py-1 px-2">المشتريات</div>
+                        <div class="org-chart-node text-sm py-1 px-2">المخازن</div>
+                        <div class="org-chart-node text-sm py-1 px-2">تقنية المعلومات</div>
+                        <div class="org-chart-node text-sm py-1 px-2">العلاقات العامة والهوية المؤسسية</div>
+                        <div class="org-chart-node text-sm py-1 px-2">الأرشيف والسكرتارية</div>
+                        <div class="org-chart-node text-sm py-1 px-2">الجودة والامتثال</div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="org-chart-node inline-block min-w-[200px] bg-sky-100 border-sky-700 text-sky-900">وحدات الأعمال التشغيلية</div>
+                     <div class="mt-2 space-y-1">
+                        <div class="org-chart-connector h-4 bg-sky-700"></div>
+                        <div class="org-chart-node text-sm py-1 px-2 bg-sky-50 border-sky-600 text-sky-800">وحدة أعمال استيراد وتوزيع المواد المتخصصة</div>
+                        <div class="org-chart-node text-sm py-1 px-2 bg-sky-50 border-sky-600 text-sky-800">وحدة أعمال تجهيز وتركيب المرافق المتخصصة</div>
+                        <div class="org-chart-node text-sm py-1 px-2 bg-sky-50 border-sky-600 text-sky-800">وحدة أعمال إدارة النفايات المتخصصة</div>
+                        <div class="org-chart-node text-sm py-1 px-2 bg-sky-50 border-sky-600 text-sky-800">وحدة أعمال المقاولات والخدمات العامة</div>
+                        <div class="org-chart-node text-sm py-1 px-2 bg-sky-50 border-sky-600 text-sky-800">وحدة أعمال خدمات الإسعاف والنقل المتخصص</div>
+                        <div class="org-chart-node text-sm py-1 px-2 bg-sky-50 border-sky-600 text-sky-800">وحدة أعمال الأمن والحماية</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sharedServices" class="content-section card">
+            <h2 class="card-title">الإدارات المركزية (الخدمات المشتركة)</h2>
+            <p class="mb-6 text-stone-700 leading-relaxed">تقدم هذه الإدارات الدعم والخدمات الأساسية لجميع وحدات الأعمال، مما يضمن توحيد المعايير، تحقيق الكفاءة، وتوفير التكاليف. كل إدارة لها مهام ومسؤوليات محددة تسهم في تحقيق الأهداف العامة للمجموعة.</p>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-semibold text-teal-700">الموارد البشرية (HR):</h3>
+                    <p class="text-sm text-stone-600">التوظيف، الرواتب، التقييمات، التطوير المهني لجميع الموظفين.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-teal-700">الإدارة المالية (Finance):</h3>
+                    <p class="text-sm text-stone-600">حسابات وتقارير مستقلة لكل شركة، متابعة الضرائب والتدفقات النقدية، تخصيص التكاليف.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-teal-700">إدارة المشتريات:</h3>
+                    <p class="text-sm text-stone-600">تنفيذ جميع طلبات الشراء، توحيد معايير الشراء وتحقيق أفضل الصفقات.</p>
+                </div>
+                 <div>
+                    <h3 class="font-semibold text-teal-700">إدارة المخازن:</h3>
+                    <p class="text-sm text-stone-600">تخزين المواد المشتركة، تحديد استهلاك كل شركة، نظام إلكتروني لتتبع المخزون.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-teal-700">تقنية المعلومات (IT):</h3>
+                    <p class="text-sm text-stone-600">إدارة البنية التحتية، حماية البيانات، الدعم الفني العام.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-teal-700">العلاقات العامة والهوية المؤسسية:</h3>
+                    <p class="text-sm text-stone-600">تنسيق الفعاليات والحملات الإعلامية، إدارة الهوية المؤسسية.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-teal-700">إدارة الأرشيف والسكرتارية:</h3>
+                    <p class="text-sm text-stone-600">الحفظ المنظم للمستندات، تصنيف الأرشيف، دعم سكرتاري وإداري عام.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-teal-700">إدارة الجودة والامتثال:</h3>
+                    <p class="text-sm text-stone-600">مراجعة الأداء، ضمان الالتزام بالأنظمة والسياسات، رفع التوصيات.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="operatingUnits" class="content-section card">
+            <h2 class="card-title">وحدات الأعمال التشغيلية</h2>
+            <p class="mb-6 text-stone-700 leading-relaxed">تمثل وحدات الأعمال قلب العمليات التشغيلية للمجموعة، حيث تركز كل وحدة على نشاطها التخصصي. تستفيد هذه الوحدات من دعم الإدارات المركزية، مع الحفاظ على استقلالية إدارتها الداخلية لتحقيق أهدافها المحددة.</p>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="font-semibold text-sky-700 mb-2">الهيكل الداخلي النموذجي لكل وحدة أعمال:</h3>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-stone-600">
+                        <li>إدارة العمليات: مسؤولة عن التنفيذ اليومي للنشاط الرئيسي للوحدة.</li>
+                        <li>إدارة المبيعات: مسؤولة عن استهداف العملاء وتحقيق الإيرادات.</li>
+                        <li>إدارة خدمة العملاء: تتعامل مع استفسارات العملاء وشكواهم.</li>
+                        <li>إدارة التسويق: تروج لخدمات ومنتجات الوحدة.</li>
+                    </ul>
+                </div>
+                <hr>
+                <div>
+                    <h3 class="font-semibold text-sky-700">وحدة أعمال استيراد وتوزيع المواد المتخصصة:</h3>
+                    <p class="text-sm text-stone-600">تركز على توفير وتوزيع المواد الحيوية والمتخصصة للسوق، مع ضمان الجودة والامتثال للمعايير.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-sky-700">وحدة أعمال تجهيز وتركيب المرافق المتخصصة:</h3>
+                    <p class="text-sm text-stone-600">تقدم حلولاً متكاملة لتجهيز وتركيب المرافق، خاصة في القطاعات التي تتطلب معايير فنية عالية.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-sky-700">وحدة أعمال إدارة النفايات المتخصصة:</h3>
+                    <p class="text-sm text-stone-600">توفر خدمات آمنة وفعالة لجمع ومعالجة والتخلص من النفايات المتخصصة والخطرة وفقًا للوائح البيئية والصحية.</p>
+                </div>
+                 <div>
+                    <h3 class="font-semibold text-sky-700">وحدة أعمال المقاولات والخدمات العامة:</h3>
+                    <p class="text-sm text-stone-600">تنفيذ مشاريع المقاولات العامة والإنشاءات، وتقديم خدمات عامة متنوعة.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-sky-700">وحدة أعمال خدمات الإسعاف والنقل المتخصص:</h3>
+                    <p class="text-sm text-stone-600">تقديم خدمات الإسعاف الطارئ والنقل الطبي المتخصص للمرضى والحالات الحرجة.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-sky-700">وحدة أعمال الأمن والحماية:</h3>
+                    <p class="text-sm text-stone-600">توفير خدمات الأمن والحماية للمنشآت والأفراد، وضمان بيئة آمنة.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="governance" class="content-section card">
+            <h2 class="card-title">الحوكمة، المساءلة، والتنسيق</h2>
+            <p class="mb-6 text-stone-700 leading-relaxed">تعتبر الحوكمة الرشيدة والمساءلة الواضحة وآليات التنسيق الفعالة ركائز أساسية لنجاح هذا النموذج التنظيمي. يهدف هذا القسم إلى توضيح كيفية ضمان الالتزام وتحقيق التكامل بين مختلف مكونات المجموعة.</p>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-semibold text-teal-700">المراجعة الداخلية والامتثال القانوني:</h3>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-stone-600">
+                        <li>التدقيق المنتظم على العمليات المالية والإدارية لجميع الأقسام.</li>
+                        <li>التحقق من الالتزام التام بالقوانين واللوائح (خاصة في القطاع الطبي والبيئي).</li>
+                        <li>تقديم تقارير مفصلة للإدارة العليا توضح المخاطر وتقدم حلولاً للتحسين.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-teal-700">تقارير الأداء والتنسيق:</h3>
+                     <ul class="list-disc list-inside space-y-1 text-sm text-stone-600">
+                        <li>إعداد تقارير أداء مالية وتشغيلية دقيقة لكل وحدة أعمال لتقييم الأداء الفردي.</li>
+                        <li>عقد اجتماعات تنسيق دورية بين مديري وحدات الأعمال ورؤساء الإدارات المركزية لضمان التنسيق وحل التحديات.</li>
+                        <li>استخدام نظام مركزي لإدارة المهام والموارد لتسجيل وتتبع المهام والمشاريع، وتوزيع الموارد المشتركة بكفاءة.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="implementation" class="content-section card">
+            <h2 class="card-title">الخطوات التالية - نحو التنفيذ</h2>
+            <p class="mb-6 text-stone-700 leading-relaxed">بعد الموافقة على هذا الهيكل التنظيمي المقترح، سيتم اتخاذ الخطوات التالية لضمان تنفيذه بفعالية وسلاسة، وتحقيق الأهداف المرجوة للمجموعة.</p>
+            <ol class="list-decimal list-inside space-y-3 text-stone-700">
+                <li class="list-item">**الموافقة على الهيكل:** الحصول على موافقة مجلس الإدارة على النموذج المقترح.</li>
+                <li class="list-item">**تحديد الوصف الوظيفي التفصيلي:** لكل موظف مع مراعاة الأدوار المشتركة والمسؤوليات المحددة.</li>
+                <li class="list-item">**تطوير السياسات والإجراءات الداخلية:** لتنظيم العمل ودعم الهيكل الجديد وآليات التنسيق.</li>
+                <li class="list-item">**تنفيذ نظام تكنولوجي متكامل:** لدعم الخدمات المشتركة، إدارة المهام، وتسهيل تدفق المعلومات.</li>
+                <li class="list-item">**برامج تدريب وتوعية:** للموظفين حول الهيكل الجديد، الأدوار، والمسؤوليات، وآليات العمل المحدثة.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="bg-teal-800 text-teal-100 py-8 mt-12 text-center">
+        <p>&copy; 2025 مجموعة الشركات. جميع الحقوق محفوظة.</p>
+        <p class="text-sm mt-1">مقترح مقدم إلى مجلس الإدارة الموقر.</p>
+    </footer>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.dataset.tab;
+
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.remove('bg-teal-100');
+                     btn.classList.remove('text-teal-600');
+
+
+                });
+                button.classList.add('active');
+                button.classList.add('bg-teal-100');
+                button.classList.add('text-teal-600');
+
+
+                contentSections.forEach(section => {
+                    if (section.id === targetTab) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
